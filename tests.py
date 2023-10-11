@@ -1,7 +1,7 @@
 # our tests here
 import math
 import unittest
-from functions import simpson_integration
+from integration import simpson_integration
 
 class TestSimpsonIntegration(unittest.TestCase):
     def test_simpson_integration_parabola(self):
