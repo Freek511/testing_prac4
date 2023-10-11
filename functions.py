@@ -2,21 +2,21 @@
 import math
 
 
-def create_string_equation(s, coef, step):
-    if step == 0:
-        s += coef
-    elif step == 1:
-        if int(coef) > 0:
-            s = s + "+" + coef + "*x"
-        else:
-            s = s + coef + "*x"
-    else:
-        if int(coef) > 0:
-            s = s + "+" + coef + "*x**" + str(step)
-        else:
-            s = s + coef + "*x**" + str(step)
-
-    return s
+# def create_string_equation(s, coef, step):
+#     if step == 0:
+#         s += coef
+#     elif step == 1:
+#         if int(coef) > 0:
+#             s = s + "+" + coef + "*x"
+#         else:
+#             s = s + coef + "*x"
+#     else:
+#         if int(coef) > 0:
+#             s = s + "+" + coef + "*x**" + str(step)
+#         else:
+#             s = s + coef + "*x**" + str(step)
+#
+#     return s
 
 def calc_func(coeffs, x):
     ans = coeffs[0]
@@ -49,3 +49,19 @@ def equation_solver(coeffs, power, a=1.7e+308, b=2.2e-308, eps=2.2e-16):
             a = a - (b - a) * calc_func(coeffs, a) / (calc_func(coeffs, b) - calc_func(coeffs, a))
             b = b - (a - b) * calc_func(coeffs, b) / (calc_func(coeffs, a) - calc_func(coeffs, b))
         return b
+
+def create_string_equation(s, coef, step):
+    if step == 0:
+        s += coef
+    elif step == 1:
+        if int(coef) > 0:
+            s = s + "+" + coef + "*x"
+        else:
+            s = s + coef + "*x"
+    else:
+        if int(coef) > 0:
+            s = s + "+" + coef + "*x**" + str(step)
+        else:
+            s = s + coef + "*x**" + str(step)
+
+    return s
