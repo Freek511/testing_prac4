@@ -34,4 +34,11 @@ jobs:
     - name: Test string expression bdd
       run: |
         behave features/create_string_equation.feature
+    - name: Test integration tdd
+      run: |
+        python integration_testing.py -v
+    - name: Test numerical diff bdd
+      run: |
+        behave BDD/numerical_diff.feature
+      
       
