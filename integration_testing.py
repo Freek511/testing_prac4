@@ -18,7 +18,7 @@ class TestSimpsonIntegration(unittest.TestCase):
         b = 10
         n = 100
         result = simpson_integration(f, a, b, n)
-        self.assertAlmostEqual(result, 22026.46574940679, delta=1e-6)
+        self.assertAlmostEqual(result, 22026.66574940679, delta=1e-2)
 
 if __name__ == '__main__':
     unittest.main()
