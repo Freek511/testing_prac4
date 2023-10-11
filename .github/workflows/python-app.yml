@@ -42,6 +42,6 @@ jobs:
         behave BDD/numerical_diff.feature
     - name: Test matrix multiplication tdd
       run: |
-        python matrix_multiplication.py -v
+        python matrix_multiplication_test.py -v
       
       
