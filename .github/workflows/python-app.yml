@@ -31,3 +31,7 @@ jobs:
     - name: Test equation tdd
       run: |
         python equation_testing.py -v
+    - name: Test string expression bdd
+      run: |
+        behave features/create_string_equation.feature
+      
