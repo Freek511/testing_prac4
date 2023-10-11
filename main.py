@@ -1,9 +1,10 @@
 # our main here
 from functions import *
 
+
 def since_calc():
     print('Welcome to Since Calculator by Matveev, Gribchenko, Merenkov\n'
-          'You can do:\n1) Solving equation\n2) Solving integrals\n3) Solving matrix problems')
+          'You can do:\n1) Solving equation\n2) Solving integrals and derivating\n3) Solving matrix problems')
     sw = input('Please enter a number from 1 to 3 to continue: ')
 
     if int(sw) == 1:
@@ -29,7 +30,22 @@ def since_calc():
 
 
     elif sw == 2:
-        ...
+        choise = input('Enter a number from 1 to solve integral 2 to derivate: ')
+        if choise == 1:
+            func = input("Enter a function: ")
+            f = lambda x: eval(func)
+            a = int(input("Enter left end: "))
+            b = int(input("Enter right end: "))
+            n = int(input("Enter n: "))
+            print(f"Your answer is: {simpson_integration(f, a, b, n)}")
+        elif choise == 2:
+            func = input("Enter a function: ")
+            f = lambda x: eval(func)
+            x = int(input("Enter x: "))
+            h = int(input("Enter h: "))
+            numerical_diff(f, x, h)
+        else:
+            print("Incorrect input")
     elif sw == 3:
         ...
     else:

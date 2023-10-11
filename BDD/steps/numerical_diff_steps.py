@@ -1,6 +1,5 @@
 from behave import given, when, then
-from function import numerical_diff
-import math
+from functions import *
 
 @given('функция f(x) "{f}", точка x "{x:d}" и шаг h "{h:e}"')
 def step_impl(context, f, x, h):
