@@ -81,3 +81,23 @@ def numerical_diff(f, x, h=1e-6):
     Вычисляет численную производную функции f в точке x с шагом h.
     """
     return (f(x + h) - f(x - h)) / (2 * h)
+
+
+def multiply_matrices(m1, m2):
+
+    assert(type(m1) == list)
+    assert(type(m2) == list)
+
+    assert(type(m1[0]) == list)
+    assert(type(m2[0]) == list)
+
+    assert(len(m1[0]) == len(m2))
+
+    new_matrix = [[0 for _ in range(len(m2[0]))] for _ in range(len(m1))]
+
+    for i in range(len(m1)):
+        for j in range(len(m2[0])):
+            for k in range(len(m2)):
+                new_matrix[i][j] += m1[i][k] * m2[k][j]
+
+    return new_matrix
