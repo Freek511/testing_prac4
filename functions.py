@@ -101,3 +101,21 @@ def multiply_matrices(m1, m2):
                 new_matrix[i][j] += m1[i][k] * m2[k][j]
 
     return new_matrix
+
+
+def transpose_matrix(m):
+
+    assert(type(m) == list)
+
+    if len(m) == 0:
+        return m
+
+    assert(type(m[0]) == list)
+
+    new_matrix = [[0 for _ in range(len(m))] for _ in range(len(m[0]))]
+
+    for i in range(len(new_matrix)):
+        for j in range(len(new_matrix[0])):
+            new_matrix[i][j] = m[j][i]
+
+    return new_matrix
