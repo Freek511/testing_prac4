@@ -43,5 +43,8 @@ jobs:
     - name: Test matrix multiplication tdd
       run: |
         python matrix_multiplication_test.py -v
+    - name: Test matrix transpose bdd
+      run: |
+        behave features/transpose_matrix.feature -v
       
       
