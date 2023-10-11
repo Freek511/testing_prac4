@@ -29,7 +29,7 @@ def since_calc():
 
 
 
-    elif sw == 2:
+    elif int(sw) == 2:
         choise = input('Enter a number from 1 to solve integral 2 to derivate: ')
         if choise == 1:
             func = input("Enter a function: ")
@@ -46,7 +46,7 @@ def since_calc():
             numerical_diff(f, x, h)
         else:
             print("Incorrect input")
-    elif sw == 3:
+    elif int(sw) == 3:
         ...
     else:
         ...
