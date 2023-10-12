@@ -27,8 +27,6 @@ def since_calc():
             ans = equation_solver(coeffs, power, a, b, eps)
         print("Your answer is:" + str(ans))
 
-
-
     elif int(sw) == 2:
         choise = input('Enter a number from 1 to solve integral 2 to derivate: ')
         if choise == 1:
@@ -47,9 +45,25 @@ def since_calc():
         else:
             print("Incorrect input")
     elif int(sw) == 3:
-        ...
+        choice = int(input('1) Multiply matrices\n2) Transpose matrix\n'
+                       'Please enter a number from 1 to 2 to continue: '))
+        if choice == 1:
+            m1 = eval(input("Enter matrix m1 (example: [[1, 2], [3, 4]]):\n"))
+            m2 = eval(input("Enter matrix m2 (example: [[1, 2], [3, 4]]):\n"))
+            try:
+                print("Result of multiplication of matrices is\n", multiply_matrices(m1, m2))
+            except AssertionError as e:
+                print("Incorrect input")
+        elif choice == 2:
+            m = eval(input("Enter matrix (example: [[1, 2], [3, 4]]):\n"))
+            try:
+                print("Transposed matrix\n", transpose_matrix(m))
+            except AssertionError as e:
+                print("Incorrect input")
+        else:
+            print("Incorrect input")
     else:
-        ...
+        exit(1)
 
 
 since_calc()

@@ -18,7 +18,7 @@ class TestClass(unittest.TestCase):
 
         self.assertEqual(answer, multiply_matrices(m1, m2))
 
-    def test_multiply_matrices_with_different_dimension(self):
+    def test_multiply_matrices_with_incompatible_dimension(self):
         m1 = [[1, 2],
               [3, 4],
               [5, 6]]
@@ -32,6 +32,12 @@ class TestClass(unittest.TestCase):
     def test_multiply_matrices_invalid_arguments(self):
         m1 = 123
         m2 = dict()
+        with self.assertRaises(AssertionError):
+            multiply_matrices(m1, m2)
+
+    def test_multiply_incorrect_matrices(self):
+        m1 = [[1, 1], [1]]
+        m2 = [[1, 1], [1, 1]]
         with self.assertRaises(AssertionError):
             multiply_matrices(m1, m2)
 
