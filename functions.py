@@ -93,6 +93,9 @@ def multiply_matrices(m1, m2):
 
     assert(len(m1[0]) == len(m2))
 
+    assert (all(len(m1[i]) == len(m1[0]) for i in range(len(m1))))
+    assert (all(len(m2[i]) == len(m2[0]) for i in range(len(m2))))
+
     new_matrix = [[0 for _ in range(len(m2[0]))] for _ in range(len(m1))]
 
     for i in range(len(m1)):
@@ -111,6 +114,7 @@ def transpose_matrix(m):
         return m
 
     assert(type(m[0]) == list)
+    assert(all(len(m[i]) == len(m[0]) for i in range(len(m))))
 
     new_matrix = [[0 for _ in range(len(m))] for _ in range(len(m[0]))]
 
