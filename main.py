@@ -8,7 +8,7 @@ def since_calc():
     sw = input('Please enter a number from 1 to 3 to continue: ')
 
     if int(sw) == 1:
-        power = input('Enter a power of the equation: ')
+        power = int(input('Enter a power of the equation: '))
         coeffs = []
         equation = ''
 
@@ -28,7 +28,7 @@ def since_calc():
         print("Your answer is:" + str(ans))
 
     elif int(sw) == 2:
-        choise = input('Enter a number from 1 to solve integral 2 to derivate: ')
+        choise = int(input('Enter a number from 1 to solve integral 2 to derivate: '))
         if choise == 1:
             func = input("Enter a function: ")
             f = lambda x: eval(func)
@@ -40,8 +40,8 @@ def since_calc():
             func = input("Enter a function: ")
             f = lambda x: eval(func)
             x = int(input("Enter x: "))
-            h = int(input("Enter h: "))
-            numerical_diff(f, x, h)
+            h = float(input("Enter h: "))
+            print(f"Your answer is: {numerical_diff(f, x, h)}")
         else:
             print("Incorrect input")
     elif int(sw) == 3:
